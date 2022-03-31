@@ -5,6 +5,10 @@ inputs:
     description: 'Programming language provided by the repo'
     required: true
     default: ''
+    destination-filename:
+    description: 'full path for maxmind database, the directory need to exist'
+    required: true
+    default: ''
 runs:
-  using: 'Python'
-  main:
+  using: 'python'
+  main: 'src/main.py'
