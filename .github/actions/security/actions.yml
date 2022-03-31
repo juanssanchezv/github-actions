@@ -1,0 +1,10 @@
+name: 'language'
+description: 'Get the programming language of the repository'
+inputs:
+  language:
+    description: 'Programming language provided by the repo'
+    required: true
+    default: ''
+runs:
+  using: 'Python'
+  main:
