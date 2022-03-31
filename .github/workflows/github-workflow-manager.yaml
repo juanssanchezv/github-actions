@@ -1,6 +1,7 @@
 name: Run github action from workflow manager
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * 0'
@@ -11,7 +12,12 @@ jobs:
     name: Select the appropiate workflow based on the language
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+
+      - name: Check out workflow repo
+        uses: actions/checkout@v2
+        with:
+          repository: orgname/reponame
 
       - name: checkout-repo-github-action
         uses: './.github/actions/security'
